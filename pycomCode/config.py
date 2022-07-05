@@ -17,18 +17,26 @@ WIFI_MAC = ubinascii.hexlify(machine.unique_id()).upper()
 # Set  the Gateway ID to be the first 3 bytes of MAC address + 'FFFE' + last 3 bytes of MAC address
 GATEWAY_ID = WIFI_MAC[:6] + "FFFE" + WIFI_MAC[6:12]
 
-SERVER = "eu1.cloud.thethings.network"
+SERVER = "3.227.47.204"
+PORT = 8000
+# SERVER = "eu1.cloud.thethings.network"
 # SERVER = "router.eu.thethings.network"
-PORT = 1700
+# PORT = 1700
 
-NTP = "0.africa.pool.ntp.org"
+# NTP = "0.pool.ntp.org"
+# NTP = "0.africa.pool.ntp.org"
+NTP = "pool.ntp.org"
 NTP_PERIOD_S = 3600
 
-# WIFI_SSID = "KI-HUB KNUST"
-# WIFI_PASS = "KBI@cbd.knust"
+WIFI_SSID = "KI-HUB KNUST"
+WIFI_PASS = "KBI@cbd.knust"
 
-WIFI_SSID = "chentao"
-WIFI_PASS = "chentaotao"
+# WIFI_SSID = "chentao"
+# WIFI_PASS = "chentaotao"
+
+# WIFI_SSID = "TUMI WIFI"
+# WIFI_PASS = "WomenEmpowerment"
+
 
 # for EU868
 LORA_FREQUENCY = 868100000
