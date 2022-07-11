@@ -49,9 +49,10 @@ pycom.rgbled(0xFF00)
 print("Started LoRa Node at :", LORA_FREQUENCY, "Hz")
 
 
-interval = 60
+interval = 30
 sample = 60
 debug = True
+
 try:
     from machine import UART, Pin
 
@@ -84,12 +85,15 @@ class SensorData:
     def export_data(self):
         return [self.pm25, self.pm10,self.pm25_cnt,self.pm10_cnt]
 
-for i in range(4):
+while True:
     lastTime = time()
-    print(sps30.getData(debug=debug))
-    sps30.read_measurement(debug=debug)
-    
+    # print(sps30.getData(debug=debug))
+    s.send(sps30.read_measurement(debug=debug))
+
     now = interval + time() - lastTime
+    rx, port = s.recvfrom(256)
+    if rx:
+        print("Received: {}, on port: {}".format(rx, port))
     if now > 0:
         sleep(now)
 
