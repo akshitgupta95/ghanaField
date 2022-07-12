@@ -1,0 +1,29 @@
+{
+  "SX127x_conf":
+  {
+    "freq": 434000000,
+    "spread_factor": 7,
+    "pin_nss": 10,
+    "pin_dio0": 7,
+    "pin_rst": 3,
+    "pin_led1":4
+  },
+  "gateway_conf":
+  {
+    "ref_latitude": 0.0,
+    "ref_longitude": 0.0,
+    "ref_altitude": 10,
+    "name": "E45F01FFFFA598BD",
+    "email": "rider4381@gmail.com",
+    "desc": "",
+    "is_pi_zero": false,
+    "servers": [
+      {
+        "address": "eu1.cloud.thethings.network",
+        "port": 1700,
+        "enabled": true
+      }
+    ]
+  }
+}
+
